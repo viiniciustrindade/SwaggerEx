@@ -1,0 +1,185 @@
+1. @ApiResponse
+Descreve as respostas possíveis do endpoint, incluindo códigos de status HTTP e suas descrições.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+@ApiResponse(responseCode = "201", description = "Livro criado com sucesso", content = @Content(schema = @Schema(implementation = Livro.class)))
+@ApiResponse(responseCode = "400", description = "Requisição inválida")
+@ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+2. @Parameter
+Documenta os parâmetros de entrada, como o corpo da requisição (@RequestBody), incluindo descrições e exemplos.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+@ApiResponse(responseCode = "201", description = "Livro criado com sucesso", content = @Content(schema = @Schema(implementation = Livro.class)))
+public ResponseEntity<Livro> postLivro(
+    @RequestBody 
+    @Parameter(description = "Objeto Livro a ser criado", required = true, 
+               content = @Content(schema = @Schema(implementation = Livro.class)))
+    Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+3. @Tag
+Agrupa endpoints relacionados em uma categoria, facilitando a organização da documentação.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Tag(name = "Livros", description = "Operações relacionadas a livros")
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+4. @RequestBody
+Descreve o corpo da requisição, incluindo o tipo de objeto esperado e exemplos.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+public ResponseEntity<Livro> postLivro(
+    @RequestBody 
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Objeto Livro a ser criado", required = true, 
+                                                          content = @Content(schema = @Schema(implementation = Livro.class)))
+    Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+5. @SecurityRequirement
+Documenta requisitos de segurança, como autenticação via token ou OAuth.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+@SecurityRequirement(name = "bearerAuth")
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+6. @Hidden
+Oculta o endpoint da documentação gerada pelo Swagger.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Hidden
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+7. @Content
+Especifica o tipo de conteúdo esperado ou retornado pelo endpoint, como JSON ou XML.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+@ApiResponse(responseCode = "201", description = "Livro criado com sucesso", 
+             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Livro.class)))
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+8. @ExampleObject
+Fornece exemplos de objetos no corpo da requisição ou resposta.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+@ApiResponse(responseCode = "201", description = "Livro criado com sucesso", 
+             content = @Content(schema = @Schema(implementation = Livro.class), 
+                               examples = @ExampleObject(value = "{\"id\": 1, \"titulo\": \"Dom Quixote\", \"autor\": \"Miguel de Cervantes\"}")))
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+9. @ExternalDocumentation
+Fornece links para documentação externa relacionada ao endpoint.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado", 
+           externalDocs = @ExternalDocumentation(description = "Mais informações sobre livros", 
+                                                 url = "https://exemplo.com/livros"))
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+10. @Deprecated
+Marca o endpoint como obsoleto, indicando que ele não deve ser mais usado.
+
+asciidoc
+Copy
+[source,java]
+----
+@PostMapping
+@Operation(summary = "Exemplo de endpoint", description = "Retorna o livro que foi criado")
+@Deprecated
+public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
+Exemplo Completo com Descrições
+Aqui está um exemplo completo com todas as anotações e suas descrições:
+
+asciidoc
+Copy
+= Documentação da API
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+
+== Endpoint de Criação de Livro
+
+Este endpoint permite a criação de um novo livro. Abaixo estão as anotações utilizadas para documentar o endpoint:
+
+[source,java]
+----
+@PostMapping
+@Tag(name = "Livros", description = "Operações relacionadas a livros") // Agrupa endpoints relacionados
+@Operation(summary = "Cria um novo livro", description = "Retorna o livro que foi criado") // Descreve o endpoint
+@ApiResponse(responseCode = "201", description = "Livro criado com sucesso", 
+             content = @Content(schema = @Schema(implementation = Livro.class), 
+                               examples = @ExampleObject(value = "{\"id\": 1, \"titulo\": \"Dom Quixote\", \"autor\": \"Miguel de Cervantes\"}"))) // Exemplo de resposta
+@ApiResponse(responseCode = "400", description = "Requisição inválida") // Resposta para erro de requisição
+@ApiResponse(responseCode = "500", description = "Erro interno do servidor") // Resposta para erro interno
+@SecurityRequirement(name = "bearerAuth") // Requisito de segurança (autenticação)
+public ResponseEntity<Livro> postLivro(
+    @RequestBody 
+    @Parameter(description = "Objeto Livro a ser criado", required = true, 
+               content = @Content(schema = @Schema(implementation = Livro.class))) // Descrição do corpo da requisição
+    Livro livro) {
+    return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
+}
+----
