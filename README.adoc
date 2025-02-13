@@ -1,7 +1,7 @@
 1. @ApiResponse
 Descreve as respostas possíveis do endpoint, incluindo códigos de status HTTP e suas descrições.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -17,7 +17,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 2. @Parameter
 Documenta os parâmetros de entrada, como o corpo da requisição (@RequestBody), incluindo descrições e exemplos.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -35,7 +35,7 @@ public ResponseEntity<Livro> postLivro(
 3. @Tag
 Agrupa endpoints relacionados em uma categoria, facilitando a organização da documentação.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -49,7 +49,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 4. @RequestBody
 Descreve o corpo da requisição, incluindo o tipo de objeto esperado e exemplos.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -66,7 +66,7 @@ public ResponseEntity<Livro> postLivro(
 5. @SecurityRequirement
 Documenta requisitos de segurança, como autenticação via token ou OAuth.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -80,7 +80,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 6. @Hidden
 Oculta o endpoint da documentação gerada pelo Swagger.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -93,7 +93,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 7. @Content
 Especifica o tipo de conteúdo esperado ou retornado pelo endpoint, como JSON ou XML.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -108,7 +108,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 8. @ExampleObject
 Fornece exemplos de objetos no corpo da requisição ou resposta.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -124,7 +124,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 9. @ExternalDocumentation
 Fornece links para documentação externa relacionada ao endpoint.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -139,7 +139,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 10. @Deprecated
 Marca o endpoint como obsoleto, indicando que ele não deve ser mais usado.
 
-asciidoc
+
 Copy
 [source,java]
 ----
@@ -153,7 +153,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Exemplo Completo com Descrições
 Aqui está um exemplo completo com todas as anotações e suas descrições:
 
-asciidoc
+
 Copy
 = Documentação da API
 :doctype: book
