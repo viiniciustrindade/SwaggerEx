@@ -1,7 +1,49 @@
+= Documentação da API
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+
+== Configuração Inicial
+
+Para documentar a API usando o SpringDoc OpenAPI (Swagger), siga os passos abaixo:
+
+=== 1. Adicione a dependência no `pom.xml`
+
+Adicione a dependência do `springdoc-openapi-starter-webmvc-ui` no arquivo `pom.xml`:
+
+[source,xml]
+----
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.5.0</version> <!-- Verifique a versão mais recente no repositório Maven -->
+</dependency>
+----
+
+=== 2. Recarregue o Maven
+
+Após adicionar a dependência, recarregue o projeto Maven para baixar as dependências necessárias.
+
+=== 3. Configure o `application.properties`
+
+Adicione as seguintes propriedades ao arquivo `application.properties` para personalizar a documentação da API:
+
+[source,properties]
+----
+springdoc.api-docs.enabled=true
+springdoc.swagger-ui.title=Bibliotexas API
+springdoc.swagger-ui.description=API documentation for Bibliotexas project
+springdoc.swagger-ui.path=/swagger-ui.html
+----
+
+=== 4. Acesse a Documentação
+
+Após configurar o projeto, acesse a documentação da API no navegador:
+
+
 . @ApiResponse
 Descreve as respostas possíveis do endpoint, incluindo códigos de status HTTP e suas descrições.
-
-
+http://localhost:(suaporta)/swagger-ui.html
 
 [source,java]
 ----
