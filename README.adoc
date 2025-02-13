@@ -1,4 +1,4 @@
-1. @ApiResponse
+. @ApiResponse
 Descreve as respostas possíveis do endpoint, incluindo códigos de status HTTP e suas descrições.
 
 
@@ -14,7 +14,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-2. @Parameter
+. @Parameter
 Documenta os parâmetros de entrada, como o corpo da requisição (@RequestBody), incluindo descrições e exemplos.
 
 
@@ -32,7 +32,7 @@ public ResponseEntity<Livro> postLivro(
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-3. @Tag
+. @Tag
 Agrupa endpoints relacionados em uma categoria, facilitando a organização da documentação.
 
 
@@ -46,7 +46,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-4. @RequestBody
+. @RequestBody
 Descreve o corpo da requisição, incluindo o tipo de objeto esperado e exemplos.
 
 
@@ -63,7 +63,7 @@ public ResponseEntity<Livro> postLivro(
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-5. @SecurityRequirement
+. @SecurityRequirement
 Documenta requisitos de segurança, como autenticação via token ou OAuth.
 
 
@@ -77,7 +77,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-6. @Hidden
+. @Hidden
 Oculta o endpoint da documentação gerada pelo Swagger.
 
 
@@ -90,7 +90,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-7. @Content
+. @Content
 Especifica o tipo de conteúdo esperado ou retornado pelo endpoint, como JSON ou XML.
 
 
@@ -105,7 +105,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-8. @ExampleObject
+. @ExampleObject
 Fornece exemplos de objetos no corpo da requisição ou resposta.
 
 
@@ -121,7 +121,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-9. @ExternalDocumentation
+. @ExternalDocumentation
 Fornece links para documentação externa relacionada ao endpoint.
 
 
@@ -136,7 +136,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
     return new ResponseEntity<>(service.createLivro(livro), HttpStatus.CREATED);
 }
 ----
-10. @Deprecated
+. @Deprecated
 Marca o endpoint como obsoleto, indicando que ele não deve ser mais usado.
 
 
