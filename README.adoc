@@ -2,7 +2,7 @@
 Descreve as respostas possíveis do endpoint, incluindo códigos de status HTTP e suas descrições.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -18,7 +18,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Documenta os parâmetros de entrada, como o corpo da requisição (@RequestBody), incluindo descrições e exemplos.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -36,7 +36,7 @@ public ResponseEntity<Livro> postLivro(
 Agrupa endpoints relacionados em uma categoria, facilitando a organização da documentação.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -50,7 +50,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Descreve o corpo da requisição, incluindo o tipo de objeto esperado e exemplos.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -67,7 +67,7 @@ public ResponseEntity<Livro> postLivro(
 Documenta requisitos de segurança, como autenticação via token ou OAuth.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -81,7 +81,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Oculta o endpoint da documentação gerada pelo Swagger.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -94,7 +94,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Especifica o tipo de conteúdo esperado ou retornado pelo endpoint, como JSON ou XML.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -109,7 +109,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Fornece exemplos de objetos no corpo da requisição ou resposta.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -125,7 +125,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Fornece links para documentação externa relacionada ao endpoint.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -140,7 +140,7 @@ public ResponseEntity<Livro> postLivro(@RequestBody Livro livro) {
 Marca o endpoint como obsoleto, indicando que ele não deve ser mais usado.
 
 
-Copy
+
 [source,java]
 ----
 @PostMapping
@@ -154,7 +154,7 @@ Exemplo Completo com Descrições
 Aqui está um exemplo completo com todas as anotações e suas descrições:
 
 
-Copy
+
 = Documentação da API
 :doctype: book
 :icons: font
