@@ -1,4 +1,4 @@
-= Documentação da API
+= Documentação da API utilizando swagger
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
